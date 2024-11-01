@@ -1,10 +1,9 @@
 {
   "mappings": [
-    "/content/de/en/:/",
-    "/content/de/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/de/footer/social-media-icons:/social-media-icons.json",
-    "/content/de/footer/menu-links:/menu-links.json",
-    "/content/de/footer/imprint-links:/imprint-links.json",
-    "/content/de/footer/spreadsheet:/spreadsheet.json"
+    "/content/nni2/ozempic/:/",
+    "/content/nni2/novomedlink/:/",
+    "/content/nni2/novomedlink/:/",
+    "/content/nni2/novonordisk/:/",
+    "/content/nni2/footer/menu-links:/menu-links.json"
   ]
 }
