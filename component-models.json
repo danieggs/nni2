@@ -154,6 +154,23 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "radio-group",
+        "label": "Icon",
+        "name": "buttonRadio",
+        "valueType": "string",
+        "value": "button-radio",
+        "options": [
+          {
+            "name": "on",
+            "value": "true"
+          },
+          {
+            "name": "off",
+            "value": "false"
+          }
+        ]
       }
     ]
   },
