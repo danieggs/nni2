@@ -1,10 +1,4 @@
 {
   "mappings": [
-    "/content/nni2/ozempic/:/",
-    "/content/nni2/ozempic/marketro/languages/ro_ro/:/ozempic",
-    "/content/nni2/novomedlink/:/",
-    "/content/nni2/novomedlink/:/",
-    "/content/nni2/novonordisk/:/",
-    "/content/nni2/footer/menu-links:/menu-links.json"
-  ]
+    "/content/nni2/ozempic/marketro/languages/ro_ro/:/ozempic"
 }
