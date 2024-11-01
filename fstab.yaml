@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://author-p133965-e1314924.adobeaemcloud.com/bin/franklin.delivery/eggsunimediaGmbH/website-relaunch-edge/main
+    url: https://author-p133965-e1314924.adobeaemcloud.com/bin/franklin.delivery/danieggs/nni2/main
     type: "markup"
     suffix: ".html"
