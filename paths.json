@@ -1,0 +1,10 @@
+{
+  "mappings": [
+    "/content/de/en/:/",
+    "/content/de/content/aem-boilerplate/configuration:/.helix/config.json",
+    "/content/de/footer/social-media-icons:/social-media-icons.json",
+    "/content/de/footer/menu-links:/menu-links.json",
+    "/content/de/footer/imprint-links:/imprint-links.json",
+    "/content/de/footer/spreadsheet:/spreadsheet.json"
+  ]
+}

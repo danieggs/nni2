@@ -1,0 +1,52 @@
+@import './../../styles/functions';
+
+.section.one-column-text-container {
+  &--standard-hero {
+    @include media-breakpoint-up(desktop) {
+      margin-top: 100vh;
+    }
+  }
+
+  //stylelint-disable-next-line no-descending-specificity
+  .one-column-text-wrapper {
+    margin-inline: auto;
+
+    &--animated {
+      @include media-breakpoint-up(desktop) {
+        @media (prefers-reduced-motion: no-preference) {
+          opacity: 0;
+          transform: translateX(100%);
+          transition: opacity 0.6s ease-out, transform 0.4s ease-out;
+
+          &.slide-in-right {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+
+    .one-column-text {
+      &__text {
+        @include media-breakpoint-up(desktop) {
+          max-width: 672px;
+          margin-inline: auto;
+        }
+      }
+    }
+  }
+}
+
+// Universal Editor
+body.editor-mode {
+  .one-column-text-container {
+    margin-top: 0;
+
+    .one-column-text-wrapper {
+      opacity: 1;
+      transform: unset;
+      transition: unset;
+      transition-delay: 0s;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "title": "Default Content",
+      "id": "default",
+      "components": [
+        {
+          "...": "./_title.json#/definitions"
+        },
+        {
+          "...": "./_title-eggs.json#/definitions"
+        },
+        {
+          "...": "./_image.json#/definitions"
+        },
+        {
+          "...": "./_text.json#/definitions"
+        },
+        {
+          "...": "./_button.json#/definitions"
+        },
+        {
+          "...": "./_section.json#/definitions"
+        },
+        {
+          "...": "../src/blocks/*/_*.json#/definitions"
+        },
+        {
+          "...": "../src/blocks/header/header.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Sections",
+      "id": "sections",
+      "components": [
+        {
+          "...": "./_section.json#/definitions"
+        }
+      ]
+    },
+    {
+      "title": "Blocks",
+      "id": "blocks",
+      "components": [
+        {
+          "...": "../dist/blocks/*/_*.json#/definitions"
+        }
+      ]
+    }
+  ]
+}

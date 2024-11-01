@@ -1,0 +1,82 @@
+{
+  "definitions": [
+    {
+      "title": "Section",
+      "id": "section",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "section",
+      "fields": [
+        {
+          "component": "text",
+          "name": "style",
+          "value": "",
+          "label": "Style",
+          "valueType": "string"
+        },
+        {
+          "component": "radio-group",
+          "label": "Light/Dark Inversion",
+          "name": "light-dark-switch",
+          "valueType": "string",
+          "value": "light-dark-switch",
+          "options": [
+            {
+              "name": "No Inversion",
+              "value": ""
+            },
+            {
+              "name": "Inverted",
+              "value": "inversion"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "section",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "hero",
+        "cards",
+        "columns",
+        "insights",
+        "fragment",
+        "header",
+        "footer",
+        "two-columns-text",
+        "hero",
+        "article-parallax",
+        "one-column-text",
+        "contact-cta",
+        "contact-form",
+        "section",
+        "gallery",
+        "case-study",
+        "video-text-hero",
+        "illustration-hero",
+        "subpage-deck",
+        "case-study-table",
+        "pics-window",
+        "hero-insights"
+      ]
+    }
+  ]
+}

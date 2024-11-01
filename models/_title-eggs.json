@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Title Eggs",
+      "id": "title-eggs",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/title/v1/title",
+            "template": {
+              "model": "title-eggs"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "title-eggs",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "textContentEggs",
+          "label": "Text Eggs"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "customClassEggs",
+          "label": "CSS Class",
+          "value": "body-yellow"
+        }
+      ]
+    }
+  ]
+}

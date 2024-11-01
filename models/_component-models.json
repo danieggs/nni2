@@ -1,0 +1,26 @@
+[
+  {
+    "...": "./_title.json#/models"
+  },
+  {
+    "...": "./_title-eggs.json#/models"
+  },
+  {
+    "...": "./_image.json#/models"
+  },
+  {
+    "...": "./_text.json#/models"
+  },
+  {
+    "...": "./_button.json#/models"
+  },
+  {
+    "...": "./_section.json#/models"
+  },
+  {
+    "...": "./_page.json#/models"
+  },
+  {
+    "...": "../src/blocks/*/_*.json#/models"
+  }
+]
