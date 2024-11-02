@@ -46,67 +46,44 @@ async function fetchAndProcessData(url: string, callback: (entry: Entry) => Link
 }
 
 export default async function decorate(block: HTMLElement): Promise<void> {
-  block.textContent = '';
+  // Mock data
+  const footerData = {
+    links: [
+      { text: "Terms of Use", url: "#" },
+      { text: "Privacy Statement", url: "#" },
+      { text: "Consumer Health Privacy Notice", url: "#" },
+      { text: "Cookie Notice", url: "#" },
+      { text: "Privacy Request", url: "#" },
+      { text: "Contact Us", url: "#" },
+      { text: "About Novo Nordisk", url: "#" },
+      { text: "Sitemap", url: "#" }
+    ],
+    address: "Novo Nordisk Inc., 800 Scudders Mill Road, Plainsboro, New Jersey 08536 U.S.A.",
+    trademark: "Novo Nordisk is a registered trademark of Novo Nordisk A/S.",
+    copyright: "©2024 Novo Nordisk All rights reserved. US24XXXXXXXXXX Month 20XX",
+    logoPath: "path/to/logo.png"
+  };
 
-  const footer = document.createElement('div');
-  footer.className = `${blockName}`;
+  // Generate HTML structure
+  const footerHTML = `
+        <footer class="footer">
+            <div class="footer__content">
+                <div class="footer__text">
+                    <div class="footer__links">
+                        ${footerData.links.map(link => `<a href="${link.url}">${link.text}</a>`).join('<span class="footer__separator">|</span>')}
+                    </div>
+                    <div class="footer__info">
+                        <p class="footer__info--address">${footerData.address}<br />${footerData.trademark}</p>
+                        <p class="footer__info--rights">${footerData.copyright}</p>
+                    </div>
+                </div>
+                <div class="footer__logo">
+                    <img src="${footerData.logoPath}" alt="Novo Nordisk logo" />
+                </div>
+            </div>
+        </footer>
+    `;
 
-  const socialLinks = await fetchAndProcessData('/social-media-icons.json', (entry) => {
-    const cssClass = entry.Text.includes('Facebook') ? `${blockName}__social-item--facebook` : entry.Text.includes('Instagram') ? `${blockName}__social-item--instagram` : `${blockName}__social-item--linkedin`;
-    return { href: entry.Link, className: cssClass };
-  });
-
-  const menuLinks = await fetchAndProcessData('/menu-links.json', (entry) => {
-    const href = entry.Link.startsWith('https://') ? entry.Link : 'http://' + entry.Link;
-    return { href: href, text: entry.Text };
-  });
-
-  const imprintLinks = await fetchAndProcessData('/imprint-links.json', (entry) => {
-    const href = entry.Link.startsWith('https://') ? entry.Link : 'http://' + entry.Link;
-    return { href: href, text: entry.Text };
-  });
-
-  const footerContent = document.createElement('div');
-  footerContent.className = `${blockName}__content`;
-  footer.appendChild(footerContent);
-
-  const footerLegal = document.createElement('div');
-  footerLegal.className = `${blockName}__legal`;
-  footer.appendChild(footerLegal);
-
-  const ulSocial = document.createElement('ul');
-  ulSocial.className = `${blockName}__social-list`;
-  socialLinks.map(createListItem).forEach(li => ulSocial.appendChild(li));
-  footerContent.appendChild(ulSocial);
-
-  const footerText = document.createElement('h3');
-  footerText.className = `${blockName}__text`;
-  footerText.textContent = 'Unleash Digital Eggscellence - Your Journey, Our Expertise. Together, We Shine';
-  footerContent.appendChild(footerText);
-
-  const footerNav = document.createElement('div');
-  footerNav.className = `${blockName}__nav`;
-  footerContent.appendChild(footerNav);
-
-  const footerHeadline = document.createElement('h4');
-  footerHeadline.className = `${blockName}__nav-headline`;
-  footerHeadline.textContent = 'Get started';
-  footerNav.appendChild(footerHeadline);
-
-  const ulNav = document.createElement('ul');
-  ulNav.className = `${blockName}__nav-links`;
-  menuLinks.map(createListItem).forEach(li => ulNav.appendChild(li));
-  footerNav.appendChild(ulNav);
-
-  const ulImprint = document.createElement('ul');
-  ulImprint.className = `${blockName}__nav-imprint`;
-  imprintLinks.map(createListItem).forEach(li => ulImprint.appendChild(li));
-  footerLegal.appendChild(ulImprint);
-
-  const divCopyright = document.createElement('div');
-  divCopyright.className = `${blockName}__copyright`;
-  divCopyright.textContent = '©2024 eggs unimedia';
-  footerLegal.appendChild(divCopyright);
-
-  block.append(footer);
+  // Inject the HTML into the block
+  block.innerHTML = footerHTML;
 }

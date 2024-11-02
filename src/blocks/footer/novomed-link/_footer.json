@@ -2,7 +2,7 @@
   "definitions": [
     {
       "title": "Footer",
-      "id": "footer",
+      "id": "footer-novomed-link",
       "plugins": {
         "xwalk": {
           "page": {
@@ -21,13 +21,6 @@
       "id": "footer",
       "fields": [
         {
-          "component": "reference",
-          "valueType": "string",
-          "name": "fileReference",
-          "label": "Image",
-          "multi": false
-        },
-        {
           "component": "text-input",
           "valueType": "string",
           "name": "footer_text",
@@ -38,8 +31,15 @@
           "component": "text-input",
           "valueType": "string",
           "name": "footer_textd",
-          "value": "Daniel",
-          "label": "Footer Text"
+          "value": "",
+          "label": "Copyright Text"
+        },
+        {
+          "component": "text-input",
+          "valueType": "string",
+          "name": "footer_third",
+          "value": "",
+          "label": "Footer "
         }
       ]
     }

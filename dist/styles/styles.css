@@ -451,13 +451,10 @@ main img {
 }
 
 /* sections */
-.inverted {
-  background-color: var(--dark);
-  color: var(--light);
-}
-
 main .section {
   padding: 64px 16px;
+  background-color: var(--light);
+  position: relative;
 }
 @media (min-width: 768px) {
   main .section {
@@ -465,6 +462,10 @@ main .section {
     position: relative;
     z-index: 1;
   }
+}
+main .section.inverted {
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 @media (min-width: 1024px) {
@@ -516,5 +517,3 @@ main .section.highlight {
 .s7videoviewer.s7mouseinput .s7socialshare .s7socialbutton[state=up] {
   height: 0 !important;
 }
-
-/*# sourceMappingURL=styles.css.map */

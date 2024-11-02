@@ -1,132 +1,58 @@
-/* stylelint-disable */
-.footer-wrapper {
-  position: relative;
-}
-.footer-wrapper .eggs-footer {
-  padding: 24px 16px;
-  background-color: var(--light);
-  font-size: var(--body-font-size-s);
-  color: var(--dark);
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer {
-    padding: 0 36px;
-  }
-}
-.footer-wrapper .eggs-footer__content {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-  padding: 24px 0;
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__content {
-    flex-direction: row;
-    gap: 163px;
-  }
-}
-.footer-wrapper .eggs-footer__text {
-  margin: 0;
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__text {
-    order: 1;
-    width: 50%;
-  }
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__nav {
-    order: 2;
-    width: 10%;
-  }
-}
-.footer-wrapper .eggs-footer__nav-headline {
-  margin: 0;
-  padding: 16px 0;
-}
-.footer-wrapper .eggs-footer__nav-links li {
-  padding-bottom: 16px;
-}
-.footer-wrapper .eggs-footer__legal {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 90px;
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__legal {
-    flex-direction: row;
-    margin-top: 0;
-    padding: 24px 0;
-  }
-}
-.footer-wrapper .eggs-footer__nav-imprint {
-  display: flex;
-  gap: 24px;
-  color: var(--dark);
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__nav-imprint {
-    width: 50%;
-  }
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__copyright {
-    width: 50%;
-    text-align: right;
-  }
-}
-.footer-wrapper .eggs-footer__social-list {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  gap: 17px;
-  padding: 12px 0 12px 0;
-}
-@media (min-width: 1024px) {
-  .footer-wrapper .eggs-footer__social-list {
-    order: 3;
-    width: 20%;
-    justify-content: flex-end;
-  }
-}
-.footer-wrapper .eggs-footer__social-item--facebook {
-  background-image: url("../../icons/facebook-light.svg");
-  background-repeat: no-repeat;
-  height: 36px;
-  width: 36px;
-  float: left;
-}
-.footer-wrapper .eggs-footer__social-item--instagram {
-  background-image: url("../../icons/instagram-light.svg");
-  background-repeat: no-repeat;
-  height: 36px;
-  width: 36px;
-  float: left;
-}
-.footer-wrapper .eggs-footer__social-item--linkedin {
-  background-image: url("../../icons/linkedin-light.svg");
-  background-repeat: no-repeat;
-  height: 36px;
-  width: 36px;
-  float: left;
-}
-.footer-wrapper .eggs-footer a:any-link {
-  text-decoration: none;
+:root {
+  --footer-address-info: 32px;
+  --footer-rights-margin-up: 40px;
 }
 
-.dark-mode .footer .eggs-footer__social-item--facebook {
-  background-image: url("../../icons/facebook-dark.svg");
+.footer {
+  background-color: #001a6c;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 14px;
 }
-.dark-mode .footer .eggs-footer__social-item--instagram {
-  background-image: url("../../icons/instagram-dark.svg");
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.dark-mode .footer .eggs-footer__social-item--linkedin {
-  background-image: url("../../icons/linkedin-dark.svg");
+.footer__text {
+  flex: 0 0 80%;
+  text-align: left;
 }
-.dark-mode .footer a:any-link {
-  color: var(--corporate-lightest);
+.footer__logo {
+  flex: 0 0 20%;
+  display: flex;
+  justify-content: flex-end;
 }
-.dark-mode .footer a:any-link:hover {
-  color: var(--link-hover-color);
+.footer__logo img {
+  max-height: 40px;
+  width: auto;
 }
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer__links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.footer__links a:hover {
+  text-decoration: underline;
+}
+.footer__links .footer__separator {
+  color: #ffffff;
+  margin: 0 5px;
+}
+.footer__info {
+  margin-top: 10px;
+}
+.footer__info--address {
+  margin-top: var(--footer-address-info);
+}
+.footer__info--rights {
+  margin-top: var(--footer-rights-margin-up);
+}
+
+/*# sourceMappingURL=footer.css.map */
