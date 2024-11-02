@@ -154,23 +154,6 @@
             "value": "secondary"
           }
         ]
-      },
-      {
-        "component": "radio-group",
-        "label": "Icon",
-        "name": "buttonRadio",
-        "valueType": "string",
-        "value": "button-radio",
-        "options": [
-          {
-            "name": "on",
-            "value": "true"
-          },
-          {
-            "name": "off",
-            "value": "false"
-          }
-        ]
       }
     ]
   },
@@ -573,25 +556,11 @@
     "id": "footer",
     "fields": [
       {
-        "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Type",
+        "component": "reference",
         "valueType": "string",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "dark_mode",
-            "value": "dark_mode"
-          },
-          {
-            "name": "light_mode",
-            "value": "light_mode"
-          }
-        ]
+        "name": "fileReference",
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text-input",
@@ -605,30 +574,7 @@
         "valueType": "string",
         "name": "footer_textd",
         "value": "Daniel",
-        "label": "Footer Textdddd"
-      },
-      {
-        "component": "multifield",
-        "name": "links",
-        "label": "Footer Links Dani",
-        "valueType": "array",
-        "multi": true,
-        "fields": [
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "text",
-            "value": "",
-            "label": "Link Text"
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "href",
-            "value": "",
-            "label": "Link URL"
-          }
-        ]
+        "label": "Footer Text"
       }
     ]
   },

@@ -112,5 +112,3 @@ body.dark-mode .case-study__card-image {
 .section.case-study-container.inverted .caseStudy__card-body, .section.case-study-container.inverted .caseStudy__card-title, .section.case-study-container.inverted .caseStudy__card-description {
   color: var(--dark);
 }
-
-/*# sourceMappingURL=case-study.css.map */
