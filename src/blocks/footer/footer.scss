@@ -1,21 +1,101 @@
 
+@import './../../styles/functions';
+@import './../../styles/typography';
+
+
 :root {
+  //MOBILE FIRST
+
+  --spacing-l: 16px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 96px;
+  --spacing-6xl: 120px;
+
+  --footer-background: var(--color-dark-blue);
+
+
+  --footer-side-padding: var(--spacing-2xl)  var(--spacing-l);
+  --footer-font-size: 14px;
+
+  --footer-logo-margin-top: 48px;
+
+  --footer-container-alignment : flex-start;
+  --footer-container-direction: column;
+
   --footer-address-info: 32px;
   --footer-rights-margin-up: 40px;
+  --footer-logo-height: 60px;
+
+  --footer-space-between-items: var(--spacing-2xl);
+  --footer-gap-title-and-items: var(--spacing-2xl);
+  --gap-between-sections: var(--spacing-4xl);
+
+
+  @include media-breakpoint-up(tablet){
+    --footer-padding-topdown: 48px;
+
+    @include media-breakpoint-down(desktop){
+      --footer-padding-topdown: 56px;
+      --footer-gap-title-and-items: var(--spacing-3xl);
+    }
+  }
 }
 
+
 .footer {
-  background-color: #001a6c; // Dark blue background
-  color: #ffffff; // White text
-  padding: 20px;
-  font-size: 14px;
+  background-color: var(--footer-background);
+  color: var(--color-white);
+  padding: var(--footer-side-padding);
+  @include mobile-body-bold-1m;
+
+  &__sections-container {
+    display: flex;
+    flex-direction: column;
+    gap:var(--gap-between-sections);
+  }
+
+  &__section {
+    max-width: 100%;
+    row-gap: var(--footer-gap-title-and-items);
+    display: flex;
+    flex-direction: column;
+    &-title {
+      margin-bottom: 0;
+      @include mobile-body-bold-1m;
+    }
+
+    &-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      row-gap: var(--footer-space-between-items);
+
+      li {
+        @include mobile-body-2m;
+
+        a {
+          color: var(--color-white); //because Safari needs additional declaration of <a> colors, otherwise it will give blue colors to links.
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 
   &__content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: var(--footer-container-alignment);
+    flex-direction: var(--footer-container-direction);
   }
 
   &__text {
@@ -27,9 +107,11 @@
     flex: 0 0 20%; // Occupies 20% of the width
     display: flex;
     justify-content: flex-end;
+    height: var(--footer-logo-height);
+    margin-top: var(--footer-logo-margin-top);
 
     img {
-      max-height: 40px;
+
       width: auto;
     }
   }
