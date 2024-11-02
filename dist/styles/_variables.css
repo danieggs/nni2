@@ -1,4 +1,7 @@
 :root {
+  --color-dark-blue: #001a6c;
+  --color-white: #ffffff;
+  --color-link-hover: #a199ff;
   /* colors */
   --link-color: #35333A;
   --link-hover-color: #FEC626;

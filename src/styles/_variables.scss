@@ -1,6 +1,11 @@
 @use "sass:math";
 
 :root {
+  --color-dark-blue: #001a6c;
+  --color-white: #ffffff;
+  --color-link-hover: #a199ff; // Example for link hover color, adjust as needed
+
+
   /* colors */
   --link-color: #35333A;
   --link-hover-color: #FEC626;

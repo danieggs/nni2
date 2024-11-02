@@ -1,20 +1,94 @@
+/* stylelint-disable */
 :root {
+  --spacing-l: 16px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 96px;
+  --spacing-6xl: 120px;
+  --footer-background: var(--color-dark-blue);
+  --footer-side-padding: var(--spacing-2xl) var(--spacing-l);
+  --footer-font-size: 14px;
+  --footer-logo-margin-top: 48px;
+  --footer-container-alignment: flex-start;
+  --footer-container-direction: column;
   --footer-address-info: 32px;
   --footer-rights-margin-up: 40px;
+  --footer-logo-height: 60px;
+  --footer-space-between-items: var(--spacing-2xl);
+  --footer-gap-title-and-items: var(--spacing-2xl);
+  --gap-between-sections: var(--spacing-4xl);
+}
+@media (min-width: 768px) {
+  :root {
+    --footer-padding-topdown: 48px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  :root {
+    --footer-padding-topdown: 56px;
+    --footer-gap-title-and-items: var(--spacing-3xl);
+  }
 }
 
 .footer {
-  background-color: #001a6c;
-  color: #ffffff;
-  padding: 20px;
-  font-size: 14px;
+  background-color: var(--footer-background);
+  color: var(--color-white);
+  padding: var(--footer-side-padding);
+  font-family: "Apis";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px; /* 138.889% */
+}
+.footer__sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-between-sections);
+}
+.footer__section {
+  max-width: 100%;
+  row-gap: var(--footer-gap-title-and-items);
+  display: flex;
+  flex-direction: column;
+}
+.footer__section-title {
+  margin-bottom: 0;
+  font-family: "Apis";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px; /* 138.889% */
+}
+.footer__section-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  row-gap: var(--footer-space-between-items);
+}
+.footer__section-items li {
+  font-family: "Apis";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+}
+.footer__section-items li a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+.footer__section-items li a:hover {
+  text-decoration: underline;
 }
 .footer__content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: var(--footer-container-alignment);
+  flex-direction: var(--footer-container-direction);
 }
 .footer__text {
   flex: 0 0 80%;
@@ -24,9 +98,10 @@
   flex: 0 0 20%;
   display: flex;
   justify-content: flex-end;
+  height: var(--footer-logo-height);
+  margin-top: var(--footer-logo-margin-top);
 }
 .footer__logo img {
-  max-height: 40px;
   width: auto;
 }
 .footer__links {

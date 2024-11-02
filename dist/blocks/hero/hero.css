@@ -116,7 +116,7 @@
 .hero__left-container, .hero__right-container {
   display: block;
 }
-@media (min-width: 375px) and (max-width: 1023.98px) {
+@media (min-width: 320px) and (max-width: 1023.98px) {
   .hero__left-container, .hero__right-container {
     align-items: center;
     justify-content: center;
@@ -205,7 +205,7 @@
   font-family: var(--heading-font-family);
   margin-left: -10px;
 }
-@media (min-width: 375px) and (max-width: 1023.98px) {
+@media (min-width: 320px) and (max-width: 1023.98px) {
   .hero__xl-headline--yellow {
     text-align: center;
   }
@@ -248,7 +248,7 @@
     line-height: var(--heading-line-height-xll);
   }
 }
-@media (min-width: 375px) and (max-width: 1023.98px) {
+@media (min-width: 320px) and (max-width: 1023.98px) {
   .hero__intro-headline {
     text-align: center;
   }
