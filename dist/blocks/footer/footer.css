@@ -1,12 +1,17 @@
 /* stylelint-disable */
 :root {
   --spacing-l: 16px;
+  --spacing-xl: 24px;
   --spacing-2xl: 32px;
   --spacing-3xl: 48px;
   --spacing-4xl: 64px;
   --spacing-5xl: 96px;
   --spacing-6xl: 120px;
+  --Breakpoints-Margins-desktop: 80px;
+  --footer-sections-height: auto;
+  --footer-section-width: auto;
   --footer-background: var(--color-dark-blue);
+  --footer-text-gaps: var(--Breakpoints-Margins-desktop);
   --footer-side-padding: var(--spacing-2xl) var(--spacing-l);
   --footer-font-size: 14px;
   --footer-logo-margin-top: 48px;
@@ -22,12 +27,17 @@
 @media (min-width: 768px) {
   :root {
     --footer-padding-topdown: 48px;
+    --footer-side-padding: var(--spacing-2xl) var(--spacing-3xl);
+    --gap-between-sections: var(--Breakpoints-Margins-desktop) var(--spacing-xl);
+    --footer-sections-height: 821px;
+    --footer-section-width:50%;
+    --footer-gap-title-and-items: var(--spacing-2xl);
+    --foter-text-gaps: var(--spacing-5xl);
   }
 }
 @media (min-width: 768px) and (max-width: 1023.98px) {
   :root {
     --footer-padding-topdown: 56px;
-    --footer-gap-title-and-items: var(--spacing-3xl);
   }
 }
 
@@ -45,12 +55,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-between-sections);
+  outline: 2px solid green;
+  height: var(--footer-sections-height);
+  flex-wrap: wrap;
 }
 .footer__section {
   max-width: 100%;
   row-gap: var(--footer-gap-title-and-items);
   display: flex;
   flex-direction: column;
+  outline: 2px solid white;
+  width: var(--footer-section-width);
 }
 .footer__section-title {
   margin-bottom: 0;
@@ -93,6 +108,8 @@
 .footer__text {
   flex: 0 0 80%;
   text-align: left;
+  margin-top: var(--footer-text-gaps);
+  margin-bottom: var(--spacing-3xl);
 }
 .footer__logo {
   flex: 0 0 20%;
@@ -107,6 +124,11 @@
 .footer__links {
   display: flex;
   flex-wrap: wrap;
+  font-family: "Apis";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
 .footer__links a {
   color: white;
@@ -125,9 +147,19 @@
 }
 .footer__info--address {
   margin-top: var(--footer-address-info);
+  font-family: "Apis";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
 .footer__info--rights {
   margin-top: var(--footer-rights-margin-up);
+  font-family: "Apis";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
 
 /*# sourceMappingURL=footer.css.map */

@@ -7,14 +7,18 @@
   //MOBILE FIRST
 
   --spacing-l: 16px;
+  --spacing-xl: 24px;
   --spacing-2xl: 32px;
   --spacing-3xl: 48px;
   --spacing-4xl: 64px;
   --spacing-5xl: 96px;
   --spacing-6xl: 120px;
+  --Breakpoints-Margins-desktop: 80px;
 
+  --footer-sections-height: auto;
+  --footer-section-width: auto;
   --footer-background: var(--color-dark-blue);
-
+  --footer-text-gaps: var(--Breakpoints-Margins-desktop); //mobile
 
   --footer-side-padding: var(--spacing-2xl)  var(--spacing-l);
   --footer-font-size: 14px;
@@ -35,10 +39,16 @@
 
   @include media-breakpoint-up(tablet){
     --footer-padding-topdown: 48px;
+    --footer-side-padding: var(--spacing-2xl)  var(--spacing-3xl);
+    --gap-between-sections: var(--Breakpoints-Margins-desktop) var(--spacing-xl);
+    --footer-sections-height: 821px;
+    --footer-section-width:50%;
+    --footer-gap-title-and-items: var(--spacing-2xl);
+    --foter-text-gaps: var(--spacing-5xl);
 
     @include media-breakpoint-down(desktop){
       --footer-padding-topdown: 56px;
-      --footer-gap-title-and-items: var(--spacing-3xl);
+      //--footer-gap-title-and-items: var(--spacing-3xl);
     }
   }
 }
@@ -54,6 +64,11 @@
     display: flex;
     flex-direction: column;
     gap:var(--gap-between-sections);
+    outline: 2px solid green;
+    height: var(--footer-sections-height);
+    flex-wrap: wrap;
+
+
   }
 
   &__section {
@@ -61,6 +76,11 @@
     row-gap: var(--footer-gap-title-and-items);
     display: flex;
     flex-direction: column;
+    outline: 2px solid white;
+    width: var(--footer-section-width);
+    @include media-breakpoint-up(tablet){
+
+    }
     &-title {
       margin-bottom: 0;
       @include mobile-body-bold-1m;
@@ -101,6 +121,8 @@
   &__text {
     flex: 0 0 80%; // Occupies 80% of the width
     text-align: left;
+    margin-top: var(--footer-text-gaps);
+    margin-bottom: var(--spacing-3xl);
   }
 
   &__logo {
@@ -119,7 +141,7 @@
   &__links {
     display: flex;
     flex-wrap: wrap;
-
+    @include desktop-body-3;
     a {
       color: white;
       text-decoration: none;
@@ -141,9 +163,11 @@
 
     &--address{
       margin-top: var(--footer-address-info);
+      @include desktop-body-3;
     }
     &--rights{
       margin-top: var(--footer-rights-margin-up);
+      @include desktop-body-3;
     }
   }
 }
