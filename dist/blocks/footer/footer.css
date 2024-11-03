@@ -30,7 +30,7 @@
     --footer-side-padding: var(--spacing-2xl) var(--spacing-3xl);
     --gap-between-sections: var(--Breakpoints-Margins-desktop) var(--spacing-xl);
     --footer-sections-height: 821px;
-    --footer-section-width:50%;
+    --footer-section-width: calc(50% - (var(--spacing-xl) / 2));
     --footer-gap-title-and-items: var(--spacing-2xl);
     --foter-text-gaps: var(--spacing-5xl);
   }
@@ -56,16 +56,38 @@
   flex-direction: column;
   gap: var(--gap-between-sections);
   outline: 2px solid green;
-  height: var(--footer-sections-height);
   flex-wrap: wrap;
 }
+@media (min-width: 768px) {
+  .footer__sections-container {
+    flex-direction: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__sections-container.has-6-items .footer__section {
+    flex: 1 1 calc(30% - var(--gap-between-sections) / 3); /* For six items, 3 columns, 2 rows */
+  }
+  .footer__sections-container.has-5-items .footer__section, .footer__sections-container.has-4-items .footer__section {
+    flex: 1 1 calc(20% - var(--gap-between-sections) / 5); /* For four or five items, single row */
+  }
+  .footer__sections-container.has-3-items .footer__section, .footer__sections-container.has-2-items .footer__section {
+    flex: 1 1 calc(30% - var(--gap-between-sections) / 3); /* For two or three items, single row */
+  }
+  .footer__sections-container.has-1-item .footer__section {
+    flex: 1 1 30%; /* Single centered item, space on the right */
+  }
+}
 .footer__section {
-  max-width: 100%;
   row-gap: var(--footer-gap-title-and-items);
   display: flex;
   flex-direction: column;
   outline: 2px solid white;
   width: var(--footer-section-width);
+}
+@media (min-width: 768px) {
+  .footer__section {
+    min-width: var(--footer-section-width);
+  }
 }
 .footer__section-title {
   margin-bottom: 0;
