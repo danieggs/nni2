@@ -37,6 +37,7 @@
   --gap-between-sections: var(--spacing-4xl);
 
 
+
   @include media-breakpoint-up(tablet){
     --footer-padding-topdown: 48px;
     --footer-side-padding: var(--spacing-2xl)  var(--spacing-3xl);
@@ -46,9 +47,10 @@
     --footer-gap-title-and-items: var(--spacing-2xl);
     --foter-text-gaps: var(--spacing-5xl);
 
-    @include media-breakpoint-down(desktop){
+    @include media-breakpoint-up(desktop){
       --footer-padding-topdown: 56px;
       //--footer-gap-title-and-items: var(--spacing-3xl);
+      --footer-side-padding: var(--spacing-3xl)  var(--Breakpoints-Margins-desktop);
     }
   }
 }
@@ -75,21 +77,21 @@
     @include  media-breakpoint-up(desktop){
       &.has-6-items {
         .footer__section {
-          flex: 1 1 calc(30% - (var(--gap-between-sections) / 3)); /* For six items, 3 columns, 2 rows */
+          flex: 1 1 calc(30% - (var(--spacing-xl) / 3)); /* For six items, 3 columns, 2 rows */
         }
       }
 
       &.has-5-items,
       &.has-4-items {
         .footer__section {
-          flex: 1 1 calc(20% - (var(--gap-between-sections) / 5)); /* For four or five items, single row */
+          flex: 1 1 calc(18% - var(--spacing-xl) / 5); // we need to check why why 18%
         }
       }
 
       &.has-3-items,
       &.has-2-items {
         .footer__section {
-          flex: 1 1 calc(30% - (var(--gap-between-sections) / 3)); /* For two or three items, single row */
+          flex: 1 1 calc(30% - (var(--spacing-xl) / 3)); /* For two or three items, single row */
         }
       }
 
@@ -99,9 +101,6 @@
         }
       }
     }
-
-
-
   }
 
   &__section {
@@ -109,9 +108,13 @@
     display: flex;
     flex-direction: column;
     outline: 2px solid white;
+    hyphens: none;
     width: var(--footer-section-width);
-    @include media-breakpoint-up(tablet){
+    @include media-breakpoint-between(tablet,desktop){
       min-width: var(--footer-section-width);
+    }
+    @include media-breakpoint-up(desktop){
+      max-width: 296px;
     }
     &-title {
       margin-bottom: 0;
@@ -148,6 +151,9 @@
     margin: 0 auto;
     align-items: var(--footer-container-alignment);
     flex-direction: var(--footer-container-direction);
+    @include media-breakpoint-up(desktop){
+      margin: 0;
+    }
   }
 
   &__text {
