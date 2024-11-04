@@ -32,6 +32,9 @@
   --corporate-light: var(--eggs-color-k2);
   --corporate-lighter: var(--eggs-color-k3);
   --corporate-lightest: var(--eggs-color-w);
+  --nni-default-button-color: #0062ff;
+  --nni-text-color-button: #FFFFFF;
+  --nni-blue-darker: #005AD2;
   /* light mode */
   --lightmode-yellow: #FEC626;
   --lightmode-dark: #35333A;
@@ -358,29 +361,21 @@ a:hover {
 
 /* buttons */
 a.button:any-link, button {
-  font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 1px solid transparent;
-  padding: 4px 16px;
-  text-align: center;
+  /* Desktop/Label 2 */
+  font-family: Apis;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
-  cursor: pointer;
-  color: var(--corporate-darker);
-  background-color: var(--corporate-accent);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  border-radius: 24px;
-  gap: 8px;
+  font-weight: 500;
+  line-height: 22px; /* 137.5% */
+  font-family: "Apis";
+  color: var(--nni-text-color-button);
+  background-color: var(--nni-default-button-color);
+  border-radius: 4px;
+  display: inline-flex;
+  padding: var(--spacing-l) var(--spacing-xl);
 }
-@media (min-width: 1024px) {
-  a.button:any-link, button {
-    font-size: var(--heading-font-size-s);
-  }
+a.button:any-link:hover, button:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%, var(--nni-blue-darker));
 }
 a.button:any-link.primary, button.primary {
   float: left;
@@ -397,9 +392,6 @@ a.button:any-link.primary:before, button.primary:before {
   width: 24px;
   height: 24px;
 }
-a.button:any-link.primary:hover:before, a.button:any-link.primary:focus:before, a.button:any-link.primary.hover:before, button.primary:hover:before, button.primary:focus:before, button.primary.hover:before {
-  filter: var(--yellow-icon);
-}
 a.button:any-link.secondary, button.secondary {
   background-color: unset;
   border: 1px solid var(--dark);
@@ -413,8 +405,9 @@ a.button:any-link.secondary:hover, a.button:any-link.secondary:focus, button.sec
   opacity: 0.5;
 }
 a.button:any-link:hover, a.button:any-link:focus, a.button:any-link.hover, button:hover, button:focus, button.hover {
-  background-color: var(--dark);
-  color: var(--yellow-black);
+  background-color: var(--nni-blue-darker);
+  color: var(--nni-text-color-button);
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -520,3 +513,5 @@ main .section.highlight {
 .s7videoviewer.s7mouseinput .s7socialshare .s7socialbutton[state=up] {
   height: 0 !important;
 }
+
+/*# sourceMappingURL=styles.css.map */

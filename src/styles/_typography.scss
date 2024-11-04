@@ -22,3 +22,12 @@
   font-weight: 400;
   line-height: 22px; /* 137.5% */
 }
+
+@mixin desktop-label-2{
+  /* Desktop/Label 2 */
+  font-family: Apis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 137.5% */
+}
