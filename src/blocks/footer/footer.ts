@@ -37,6 +37,15 @@ const footerData: FooterData = {
         { text: "Get LoremIpsum® Support", url: "#" },
       ],
     },
+    {
+      title: "Cost, Savings, & Support",
+      items: [
+        { text: "Check Your Cost & Coverage", url: "#" },
+        { text: "Save on LoremIpsum®", url: "#" },
+        { text: "Get LoremIpsum® Support", url: "#" },
+      ],
+    },
+
   ],
   links: [
     { text: "Terms of Use", url: "#" },
@@ -108,8 +117,11 @@ export default async function decorate(block: HTMLElement): Promise<void> {
 
 
 function generateFooterSections(sections: FooterSection[]): string {
+  const itemCount: number = sections.length;
+  const itemClass:string = `has-${itemCount}-items`;
+
   return `
-    <div class="footer__sections-container">
+    <div class="footer__sections-container ${itemClass}">
       ${sections
       .map(
           (section:FooterSection):string => `
