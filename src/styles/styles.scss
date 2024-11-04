@@ -207,6 +207,11 @@ a.button:any-link, button {
   border-radius: 4px;
   display: inline-flex;
   padding: var(--spacing-l) var(--spacing-xl);
+  border: 4px solid var(--nni-default-button-color);
+
+
+  flex-direction: row-reverse;
+
 
   &:hover{
     background: linear-gradient(0deg,  rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%, var(--nni-blue-darker));
@@ -221,6 +226,7 @@ a.button:any-link, button {
     gap: 8px;
 
 
+
     &:before {
       content: "";
       background-image: url("../icons/arrow-right.svg");
@@ -228,6 +234,8 @@ a.button:any-link, button {
       background-position: center center;
       width: 24px;
       height: 24px;
+      filter: brightness(0) invert(1); // This changes colors to white
+
     }
 
   }
@@ -238,20 +246,28 @@ a.button:any-link, button {
     color: var(--dark);
 
 
-    &:hover, &:focus {
+    &:hover {
       background-color: unset;
       border: 1px solid var(--black);
       color: var(--gray);
       cursor: pointer;
       opacity: 0.5;
     }
+    &:focus{
+      outline: 2px solid var(--nni-text-color-button);
+      outline-offset: -4px;
+    }
   }
 
-  &:hover, &:focus, &.hover {
+  &:hover, &.hover {
     background-color: var(--nni-blue-darker);
     color: var(--nni-text-color-button);
     text-decoration: none;
     cursor: pointer;
+  }
+  &:focus{
+    outline: 2px solid var(--nni-text-color-button);
+    outline-offset: -4px;
   }
 }
 

@@ -14,6 +14,15 @@
   --color-dark-blue: #001a6c;
   --color-white: #ffffff;
   --color-link-hover: #a199ff;
+  --spacing-s: 4px;
+  --spacing-l: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 96px;
+  --spacing-6xl: 120px;
+  --Breakpoints-Margins-desktop: 80px;
   /* colors */
   --link-color: #35333A;
   --link-hover-color: #FEC626;
@@ -373,6 +382,8 @@ a.button:any-link, button {
   border-radius: 4px;
   display: inline-flex;
   padding: var(--spacing-l) var(--spacing-xl);
+  border: 4px solid var(--nni-default-button-color);
+  flex-direction: row-reverse;
 }
 a.button:any-link:hover, button:hover {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%, var(--nni-blue-darker));
@@ -391,24 +402,33 @@ a.button:any-link.primary:before, button.primary:before {
   background-position: center center;
   width: 24px;
   height: 24px;
+  filter: brightness(0) invert(1);
 }
 a.button:any-link.secondary, button.secondary {
   background-color: unset;
   border: 1px solid var(--dark);
   color: var(--dark);
 }
-a.button:any-link.secondary:hover, a.button:any-link.secondary:focus, button.secondary:hover, button.secondary:focus {
+a.button:any-link.secondary:hover, button.secondary:hover {
   background-color: unset;
   border: 1px solid var(--black);
   color: var(--gray);
   cursor: pointer;
   opacity: 0.5;
 }
-a.button:any-link:hover, a.button:any-link:focus, a.button:any-link.hover, button:hover, button:focus, button.hover {
+a.button:any-link.secondary:focus, button.secondary:focus {
+  outline: 2px solid var(--nni-text-color-button);
+  outline-offset: -4px;
+}
+a.button:any-link:hover, a.button:any-link.hover, button:hover, button.hover {
   background-color: var(--nni-blue-darker);
   color: var(--nni-text-color-button);
   text-decoration: none;
   cursor: pointer;
+}
+a.button:any-link:focus, button:focus {
+  outline: 2px solid var(--nni-text-color-button);
+  outline-offset: -4px;
 }
 
 /* Highlight yellow */

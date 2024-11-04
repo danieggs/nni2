@@ -1,13 +1,5 @@
 /* stylelint-disable */
 :root {
-  --spacing-l: 16px;
-  --spacing-xl: 24px;
-  --spacing-2xl: 32px;
-  --spacing-3xl: 48px;
-  --spacing-4xl: 64px;
-  --spacing-5xl: 96px;
-  --spacing-6xl: 120px;
-  --Breakpoints-Margins-desktop: 80px;
   --spacing-bottom-footer: var(--spacing-3xl);
   --footer-sections-height: auto;
   --footer-section-width: auto;
