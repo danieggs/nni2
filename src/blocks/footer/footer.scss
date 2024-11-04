@@ -59,7 +59,7 @@
       --gap-separator-imprints: var(--spacing-l);
     }
     @include media-breakpoint-up(desktopLarge){
-      --gap-separator-imprints: 16px;
+      --gap-separator-imprints: 14px;
       --footer-text-gaps: var(--spacing-6xl);
     }
   }
@@ -200,7 +200,12 @@
     display: inline-flex;
     flex-wrap: wrap;
     row-gap: var(--footer-imprints-row-gap);
+
     column-gap: var(--footer-imprints-row-gap);
+
+    @include media-breakpoint-up(desktop){
+      column-gap: 0;
+    }
     @include desktop-body-3;
     a {
       color: white;
