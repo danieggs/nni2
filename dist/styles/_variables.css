@@ -20,6 +20,7 @@
   --corporate-light: var(--eggs-color-k2);
   --corporate-lighter: var(--eggs-color-k3);
   --corporate-lightest: var(--eggs-color-w);
+  --nni-default-button-color: #0062ff;
   /* light mode */
   --lightmode-yellow: #FEC626;
   --lightmode-dark: #35333A;
