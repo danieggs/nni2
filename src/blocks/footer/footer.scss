@@ -116,7 +116,6 @@
     row-gap: var(--footer-gap-title-and-items);
     display: flex;
     flex-direction: column;
-    outline: 2px solid white;
     hyphens: none;
     width: var(--footer-section-width);
     @include media-breakpoint-between(tablet,desktop){
