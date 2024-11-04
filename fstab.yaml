@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://eggsunimedia.sharepoint.com/sites/eggsro-Allteamspace/Shared%20Documents/AEM/nni
+    url: https://drive.google.com/drive/u/1/folders/1vx1JCwJQ0mzChrG4O9GXKi2o6dAOfGRu
     type: "markup"
     suffix: ".html"
