@@ -150,7 +150,6 @@
   .footer__content {
     flex-direction: row;
     align-items: flex-end;
-    outline: 2px solid white;
     margin: 0 auto;
   }
 }
