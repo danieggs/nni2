@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://author-p133965-e1314924.adobeaemcloud.com/bin/franklin.delivery/danieggs/nni2/main
+    url: https://eggsunimedia.sharepoint.com/AEM/eggs%20website/Website%20Relaunch
     type: "markup"
     suffix: ".html"
