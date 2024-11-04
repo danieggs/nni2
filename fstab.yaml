@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://eggsunimedia.sharepoint.com/sites/eggsro-Allteamspace/Shared%20Documents/AEM/nni
+    url: https://eggsunimedia.sharepoint.com/AEM/eggs%20website/Website%20Relaunch
     type: "markup"
     suffix: ".html"
