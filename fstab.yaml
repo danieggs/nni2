@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://eggsunimedia.sharepoint.com/:f:/s/eggsro-Allteamspace/EhK0fvE3m7JHivfNonnVbB4BUCThP2K9810SBZ9c9Qej_A?e=UagdL0
+    url: https://eggsunimedia.sharepoint.com/sites/eggsro-Allteamspace/Shared%20Documents/website
     type: "markup"
     suffix: ".html"
