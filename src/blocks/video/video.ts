@@ -1,0 +1,118 @@
+type VideoComponentData = {
+    logoPath: string;
+    title: string;
+    links: { text: string; url: string }[];
+    videoPlaceholder: string;
+    sidebarInfo: { title: string; items: string[]; additionalInfo: string[] };
+    tabs: string[];
+    content: { title: string; subtitle: string; paragraph: string };
+};
+
+const videoComponentData: VideoComponentData = {
+    logoPath: "https://svgshare.com/i/1C9s.svg",
+    title:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    links: [
+        { text: "Important Safety Information", url: "#safety" },
+        { text: "Indication and Use", url: "#indication" },
+        { text: "Prescribing Information", url: "#prescribing" },
+    ],
+    videoPlaceholder: "https://main--nni2--danieggs.aem.page/tools/sidekick/media/media_122f1bf66cf9f1f1cf928fc35a1567f7a28205131.mp4",
+    sidebarInfo: {
+        title: "Important Safety Information",
+        items: [
+            "Do not use if you have X condition.",
+            "Possible side effects include...",
+            "Consult your doctor before...",
+        ],
+        additionalInfo: [
+            "Indications and Limitations of Use",
+            "Additional information on safe usage.",
+        ],
+    },
+    tabs: ["Information", "Video Transcript", "Q&A"],
+    content: {
+        title: "Video Title / Video Duration",
+        subtitle: "This is the Info tab placeholder title",
+        paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed ligula ex. Aliquam bibendum urna ac sem commodo.",
+    },
+};
+
+export default async function decorate(block: HTMLElement): Promise<void> {
+    const initialBlockData:Node = block.cloneNode(true); // Create a deep copy of the initial block
+    console.log('Getting data:',initialBlockData);
+
+    block.innerHTML= '';
+    const componentHTML: string = `
+    ${generateHeader(videoComponentData)}
+    ${generateMainContent(videoComponentData)}
+    ${generateTabs(videoComponentData.tabs)}
+    ${generateInformationContent(videoComponentData.content)}
+  `;
+
+    // Inject the HTML into the block
+    block.innerHTML = componentHTML;
+}
+
+function generateHeader(data: VideoComponentData): string {
+    return `
+    <header class="video-component__header">
+      <img src="${data.logoPath}" alt="Logo" class="video-component__logo" />
+      <div class="video-component__title-container">
+        <h1>${data.title}</h1>
+        <div class="video-component__links">
+          ${data.links
+        .map((link) => `<a href="${link.url}">${link.text}</a>`)
+        .join(" | ")}
+        </div>
+      </div>
+    </header>
+  `;
+}
+
+function generateMainContent(data: VideoComponentData): string {
+    return `
+    <div class="video-component__main">
+      <div class="video-component__video-placeholder">
+        <img src="${data.videoPlaceholder}" alt="Video Placeholder" />
+      </div>
+      <aside class="video-component__sidebar">
+        <h2>${data.sidebarInfo.title}</h2>
+        <ul>
+          ${data.sidebarInfo.items.map((item) => `<li>${item}</li>`).join("")}
+        </ul>
+        ${data.sidebarInfo.additionalInfo
+        .map((info) => `<p>${info}</p>`)
+        .join("")}
+      </aside>
+    </div>
+  `;
+}
+
+function generateTabs(tabs: string[]): string {
+    return `
+    <div class="video-component__tabs">
+      ${tabs
+        .map(
+            (tab) =>
+                `<button class="video-component__tab">${tab}</button>`
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function generateInformationContent(content: {
+    title: string;
+    subtitle: string;
+    paragraph: string;
+}): string {
+    return `
+    <div class="video-component__content">
+      <h3>${content.title}</h3>
+      <h4>${content.subtitle}</h4>
+      <p>${content.paragraph}</p>
+    </div>
+  `;
+}

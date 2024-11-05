@@ -22,3 +22,11 @@
   font-weight: 400;
   line-height: 22px; /* 137.5% */
 }
+
+@mixin desktop-h3-bold{
+  font-family: Apis;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 33px; /* 137.5% */
+}
