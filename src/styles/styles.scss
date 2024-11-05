@@ -200,28 +200,18 @@ a:hover {
 
 /* buttons */
 a.button:any-link, button {
-  font-family: var(--body-font-family);
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: 1px solid transparent;
-  padding: 4px 16px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  cursor: pointer;
-  color: var(--corporate-darker);
-  background-color: var(--corporate-accent);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  border-radius: 24px;
-  gap: 8px;
+  @include desktop-label-2;
+  font-family: 'Apis';
+  color: var(--nni-text-color-button);
+  background-color: var(--nni-default-button-color);
+  border-radius: 4px;
+  display: inline-flex;
+  padding: var(--spacing-l) var(--spacing-xl);
 
-  @include media-breakpoint-up(desktop) {
-    font-size: var(--heading-font-size-s);
+  &:hover{
+    background: linear-gradient(0deg,  rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%, var(--nni-blue-darker));
   }
+
 
   &.primary {
     float: left;
@@ -240,11 +230,6 @@ a.button:any-link, button {
       height: 24px;
     }
 
-    &:hover:before,
-    &:focus:before,
-    &.hover:before {
-      filter: var(--yellow-icon);
-    }
   }
 
   &.secondary {
@@ -263,8 +248,9 @@ a.button:any-link, button {
   }
 
   &:hover, &:focus, &.hover {
-    background-color: var(--dark);
-    color: var(--yellow-black);
+    background-color: var(--nni-blue-darker);
+    color: var(--nni-text-color-button);
+    text-decoration: none;
     cursor: pointer;
   }
 }
