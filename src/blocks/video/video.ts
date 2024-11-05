@@ -1,13 +1,15 @@
+import {searchNestedPicture} from './../../scripts/funcs/htmlUtils';
+
 type VideoComponentData = {
     logoPath: string;
     title: string;
     links: { text: string; url: string }[];
-    videoPlaceholder: string;
+    videoPlaceholder: HTMLPictureElement | null;
     sidebarInfo: { title: string; items: string[]; additionalInfo: string[] };
     tabs: string[];
     content: { title: string; subtitle: string; paragraph: string };
 };
-
+//https://main--nni2--danieggs.aem.page/tools/sidekick/media/media_122f1bf66cf9f1f1cf928fc35a1567f7a28205131.mp4
 const videoComponentData: VideoComponentData = {
     logoPath: "https://svgshare.com/i/1C9s.svg",
     title:
@@ -17,7 +19,7 @@ const videoComponentData: VideoComponentData = {
         { text: "Indication and Use", url: "#indication" },
         { text: "Prescribing Information", url: "#prescribing" },
     ],
-    videoPlaceholder: "https://main--nni2--danieggs.aem.page/tools/sidekick/media/media_122f1bf66cf9f1f1cf928fc35a1567f7a28205131.mp4",
+    videoPlaceholder: null,
     sidebarInfo: {
         title: "Important Safety Information",
         items: [
@@ -40,9 +42,9 @@ const videoComponentData: VideoComponentData = {
 };
 
 export default async function decorate(block: HTMLElement): Promise<void> {
-    const initialBlockData:Node = block.cloneNode(true); // Create a deep copy of the initial block
-    console.log('Getting data:',initialBlockData);
-
+    const initialBlockData: HTMLElement = block.cloneNode(true) as HTMLElement; // Create a deep copy of the initial block
+    console.log('Getting data:',searchNestedPicture(initialBlockData.children[0] as HTMLElement));
+    videoComponentData.videoPlaceholder = searchNestedPicture(initialBlockData.children[0] as HTMLElement);
     block.innerHTML= '';
     const componentHTML: string = `
     ${generateHeader(videoComponentData)}
@@ -75,7 +77,7 @@ function generateMainContent(data: VideoComponentData): string {
     return `
     <div class="video-component__main">
       <div class="video-component__video-placeholder">
-        <img src="${data.videoPlaceholder}" alt="Video Placeholder" />
+        ${videoComponentData.videoPlaceholder.outerHTML}
       </div>
       <aside class="video-component__sidebar">
         <h2>${data.sidebarInfo.title}</h2>
