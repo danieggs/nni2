@@ -310,7 +310,8 @@ main .section {
 
 @include media-breakpoint-up(desktop) {
   .section > div {
-    max-width: 1200px;
+    max-width: 1280px;
+    margin: auto;
   }
 }
 

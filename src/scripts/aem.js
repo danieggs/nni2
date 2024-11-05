@@ -370,7 +370,48 @@ function createOptimizedPicture(
 
   return picture;
 }
+function createOptimizedPictureTwo(
+    src,
+    alt = '',
+    eager = false,
+    breakpoints = [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }],
+) {
+  const url = new URL(src, window.location.href);
+  const picture = document.createElement('picture');
+  const { pathname } = url;
+  const ext = pathname.substring(pathname.lastIndexOf('.') + 1);
 
+  // Add webp sources for each breakpoint
+  breakpoints.forEach((br) => {
+    const source = document.createElement('source');
+    if (br.media) source.setAttribute('media', br.media);
+    source.setAttribute('type', 'image/webp');
+    // Removing the optimization parameter
+    source.setAttribute('srcset', `${pathname}?width=${br.width}&format=webp`);
+    picture.appendChild(source);
+  });
+
+  // Add fallback sources for each breakpoint
+  breakpoints.forEach((br, i) => {
+    if (i < breakpoints.length - 1) {
+      const source = document.createElement('source');
+      if (br.media) source.setAttribute('media', br.media);
+      // Removing the optimization parameter
+      source.setAttribute('srcset', `${pathname}?width=${br.width}&format=${ext}`);
+      picture.appendChild(source);
+    } else {
+      // Add img element as the fallback
+      const img = document.createElement('img');
+      img.setAttribute('loading', eager ? 'eager' : 'lazy');
+      img.setAttribute('alt', alt);
+      picture.appendChild(img);
+      // Removing the optimization parameter
+      img.setAttribute('src', `${pathname}?width=${br.width}&format=${ext}`);
+    }
+  });
+
+  return picture;
+}
 /**
  * Set template (page structure) and theme (page styles).
  */
@@ -928,6 +969,7 @@ init();
 export {
   buildBlock,
   createOptimizedPicture,
+  createOptimizedPictureTwo,
   decorateBlock,
   decorateBlocks,
   decorateButtons,
