@@ -969,6 +969,7 @@ init();
 export {
   buildBlock,
   createOptimizedPicture,
+  createOptimizedPictureTwo,
   decorateBlock,
   decorateBlocks,
   decorateButtons,
