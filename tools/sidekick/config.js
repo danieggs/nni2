@@ -12,9 +12,9 @@
 /* global window */
 
 // This file contains the project-specific configuration for the sidekick.
-// window.hlx.initSidekick({
-//     project: 'website-relaunch-edge',
-//     host: 'https://main--website-relaunch-edge--eggsunimediagmbh.aem.live/',
-//     byocdn: false,
-//     hlx3: true
-// });
+window.hlx.initSidekick({
+    project: 'nni2',
+    host: 'https://main--nni2--danieggs.aem.live/',
+    byocdn: false,
+    hlx3: true
+});
