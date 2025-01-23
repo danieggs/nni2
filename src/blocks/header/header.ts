@@ -1,11 +1,12 @@
 import attachNavigation from './navigation';
-const blockName:string = 'header';
+
 function parseHTML(html: string): ChildNode[] {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
   return Array.from(doc.body.childNodes);
 }
 
+const blockName = 'header';
 
 export default async function decorate(block: HTMLElement): Promise<void> {
     const fragment = await loadFragment('/mazda/header');

@@ -1,9 +1,9 @@
-const blockName = 'header';
 function parseHTML(html) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     return Array.from(doc.body.childNodes);
 }
+const blockName = 'header';
 export default async function decorate(block) {
     const fragment = await loadFragment('/mazda/header');
     const fragmentHeaderData = fragment.querySelector(`.${blockName}`);
