@@ -9,6 +9,7 @@
   position: relative;
   overflow: hidden;
 
+
   @include media-breakpoint-up(tablet) {
     flex-direction: row;
     justify-content: flex-start;
