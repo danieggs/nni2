@@ -2,6 +2,7 @@
   --color-dark-blue: #001a6c;
   --color-white: #ffffff;
   --color-link-hover: #a199ff;
+  --nni-primary-color: #001965;
   /* colors */
   --link-color: #35333A;
   --link-hover-color: #FEC626;
@@ -21,6 +22,8 @@
   --corporate-lighter: var(--eggs-color-k3);
   --corporate-lightest: var(--eggs-color-w);
   --nni-default-button-color: #0062ff;
+  --nni-text-color-button: #FFFFFF;
+  --nni-blue-darker: #005AD2;
   /* light mode */
   --lightmode-yellow: #FEC626;
   --lightmode-dark: #35333A;
