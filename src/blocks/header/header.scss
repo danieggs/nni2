@@ -1,70 +1,243 @@
 @import './../../styles/functions';
 @import './navigation';
 
+:root{
 
-.header-wrapper {
-  height: 80px;
-  padding: 1rem 3%;
-  position: fixed;
-  width: 100vw;
-  z-index: 10;
-  top: 0;
-  @include media-breakpoint-up(desktop) {
-    height: 88px;
+  --header-height: 54px;
+
+  //desktop
+
+  @include media-breakpoint-up(desktop){
+    --header-height:80px;
+
   }
 
-  .header {
-    height: 100%;
+
+}
+// General Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+// Header
+.header {
+  display: flex;
+  background-color: #222;
+  color: #fff;
+  height: var(--header-height);
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1%;
+  .right-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 15px 0;
+  }
+  .logo {
+    img {
+      height: 100%;
+    }
+  }
+  .find-dealer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c5c5c5;
+    border-right: 2px solid grey;
+    padding-right: 1rem;
+    div{
+      font-family: Helvetica, serif;
+    }
+
+  }
+  .icon-find{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid grey;
+    padding-right: 1rem;
+  }
+  .burger-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__burger-icon {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 18px; /* 3 lines of 3px height + 2 gaps of 3.5px = 18px */
+    width: 18px;
+
+    @include media-breakpoint-between(xs-mobile, tablet) {
+      align-items: start;
+      margin: var(--spacing-small) 6px;
+    }
+  }
+
+  &__line {
+    height: 3px;
+    width: 18px;
+    background-color: lightgray;
+  }
+  .main-nav {
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        margin: 0 1rem;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .header-actions {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 16px 16px;
-    @include media-breakpoint-down(tablet){
-      max-width: none;
-      align-items: center;
-    }
+    gap: 1rem;
 
-    &--transparent {
-      background-color: transparent;
-    }
-
-    &__logo-container{
-      height: 100%;
-      display: flex;
-      align-items: center;
-      width: 154px;
-    }
-    &__logo-link{
-      display: flex;
-      height: 30px;
-      width: 100%;
-      color: var(--link-color);
+    a {
+      color: #fff;
       text-decoration: none;
-      align-items: center;
-      justify-content: center;
-      img{
-        width: 100%;
-      }
-    }
-    &__burger-icon {
-      display: flex;
-      cursor: pointer;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 18px; /* 3 lines of 3px height + 2 gaps of 3.5px = 18px */
-      width: 18px;
-
-      @include media-breakpoint-between(xs-mobile, tablet){
-        align-items: start;
-        margin: 16px 6px;
-      }
     }
 
-    &__line {
-      height: 3px;
-      width: 18px;
-      background-color: var(--dark);
+    .location {
+      color: #fff;
     }
   }
 }
+
+// Sub Navigation / Model Info
+.model-info {
+  background-color: #f8f8f8;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .model-details {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.25rem 0;
+  }
+
+  .model-nav {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0.5rem 0;
+
+      li {
+        margin: 0 1rem;
+
+        a {
+          text-decoration: none;
+          color: #222;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .build-dropdown {
+    margin: 0.5rem 0;
+
+    button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+}
+
+// Hero Section
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #000; // fallback
+  color: #fff;
+  padding: 3rem 2rem;
+
+  // If you prefer a background image, remove .hero-image <img> and uncomment:
+  // background: url("your-hero-image.jpg") no-repeat center center/cover;
+
+  .hero-image {
+    flex: 1 1 50%;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .hero-content {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #d71921; // Mazda-like red tone
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #b9161d;
+        }
+
+        &.secondary {
+          background-color: #444;
+
+          &:hover {
+            background-color: #222;
+          }
+        }
+      }
+    }
+  }
+}
+
