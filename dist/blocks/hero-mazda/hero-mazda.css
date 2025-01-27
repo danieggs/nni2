@@ -8,8 +8,27 @@
 
 .hero-mazda {
   width: 100%;
-  height: 500px;
+  height: 100vh;
   background-color: gray;
+  overflow: hidden;
+}
+.hero-mazda__headlines {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  top: 10%;
+  left: 6%;
+}
+.hero-mazda__inside {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.hero-mazda__inside img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /*# sourceMappingURL=hero-mazda.css.map */
